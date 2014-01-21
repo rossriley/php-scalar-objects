@@ -53,6 +53,12 @@ Syntax available is as follows.
     $array2 = ["k2"=>"val2","k3"=>"val3"];
     $array->merge($array2);  //  ["k1"=>"val","k2"=>"val2","k3"=>"val3"]
 
+    $array = ["k1"=>"val","k2"=>"val2"];
+    $array->push("val3");  //  ["k1"=>"val","k2"=>"val2",0=>"val3"]
+
+    $array = ["k1"=>"val","k2"=>"val2","k3"=>"val3"];
+    $array->rand();  //  "val3"
+
 ```
 
 

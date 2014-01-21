@@ -51,11 +51,13 @@ class Arrays {
   }
 
   public function push($val) {
-    return array_push($this, $val);
+    array_push($this, $val);
+    return $this;
   }
 
-  public function rand() {
-    return array_rand($this);
+  public function rand($number = 1) {
+    $r = array_rand($this, $number);
+    return $this[$r];
   }
 
   public function reverseKeySort() {

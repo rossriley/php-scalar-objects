@@ -16,3 +16,11 @@ showCommand("diff",'$array, $array2', '$array->diff($array2)', $array->diff($arr
 
 $array  = ["k1"=>"val","k2"=>"val2"];
 showCommand("hasKey",'$array', '$array->hasKey("k2")', $array->hasKey("k2"));
+
+
+$array = ["k1"=>"val","k2"=>"val2"];
+showCommand("push",'$array', '$array->push("val3")', $array->push("val3"));
+
+
+$array = ["k1"=>"val","k2"=>"val2","k3"=>"val3"];
+showCommand("rand",'', '$array->rand()', $array->rand());
