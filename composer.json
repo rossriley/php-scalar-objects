@@ -1,0 +1,23 @@
+{
+    "name": "rossriley/phpscalars",
+    "type": "library",
+    "description": "PHP Handlers for experimental Scalar Object Handlers",
+    "license": "MIT",
+    "authors": [
+        {"name": "Ross Riley","email": "riley.ross@gmail.com"}
+    ],
+    "require": {
+      "php": ">=5.4.0"
+    },
+
+    "autoload": {
+      "psr-4": {
+        "Spl\\Scalars\\": "src",
+        "Spl\\Scalars\\Tests\\": "tests"
+      }
+    }
+
+
+
+
+}
