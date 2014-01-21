@@ -1,6 +1,40 @@
 PHP Scalar Object Handlers
 ===========================
 
+## Wouldn't you prefer to write PHP like this?
+
+```php
+
+    $n = 12;
+    echo $n->add(5)->minus(2)->divide(3); // 5
+
+```
+
+Or deal with strings, without remembering the parameter order?
+
+```php
+
+    $str = "Hello World";
+    echo $str->replace("World","PHP"); // Hello PHP
+
+    $str = "Hello World";
+    echo $str->length();  //  11
+
+```
+
+Or chain array operations, with a simpler syntax API?
+
+```php
+
+    $arr = ["k1"=>"val1","k2"=>"val2"];
+    print_r($arr->merge(["k3"=>"val3","k4"=>"val4"])->count()) // 4
+
+```
+
+PHP6 Gives us a chance to create a new API to streamline the language in a way that ensures all old code still runs in the same way.
+Here's how to see this in action right now!
+
+
 ### An Experimental Proposal for PHP Scalar Objects
 
 Based on the fantastic extension by nikic https://github.com/nikic/scalar_objects this project is designed to start the ball rolling on the future API for Scalar objects in PHP.

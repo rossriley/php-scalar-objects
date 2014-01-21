@@ -28,4 +28,10 @@ class ArrayHandlerTest extends \PHPUnit_Framework_TestCase {
 
   }
 
+  public function test_merge_chain() {
+    $arr1 = ["k1"=>"val1","k2"=>"val2"];
+    $arr2 = ["k3"=>"val3","k4"=>"val4"];
+    $this->assertEquals($arr1->merge($arr2)->count(), 4);
+  }
+
 }

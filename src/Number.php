@@ -47,8 +47,8 @@ class Number {
         return floor($this - $num *($this / $num));
     }
 
-    public function sub($num) {
-      $this->verifyNumeric($num, "sub()");
+    public function minus($num) {
+      $this->verifyNumeric($num, "minus()");
       return $this - $num;
     }
 
