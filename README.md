@@ -39,6 +39,20 @@ Syntax available is as follows.
     $array = ["k1"=>"val","k2"=>"val2"];
     $array->count();  //  2
 
+    $array  = ["k1"=>"val","k2"=>"val2"];
+    $array2 = ["k2"=>"val2","k3"=>"val3"];
+    $array->diff($array2);  // ["k1" => "val"]
+
+    $array = ["k1"=>"val","k2"=>"val2"];
+    $array->hasKey("k2");  //  true
+
+    $array = ["k1"=>"val","k2"=>"val2"];
+    $array->keys();  //  ["k1","k2"]
+
+    $array = ["k1"=>"val","k2"=>"val2"];
+    $array2 = ["k2"=>"val2","k3"=>"val3"];
+    $array->merge($array2);  //  ["k1"=>"val","k2"=>"val2","k3"=>"val3"]
+
 ```
 
 
