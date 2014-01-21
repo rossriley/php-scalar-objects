@@ -36,6 +36,9 @@ Syntax available is as follows.
     $array->combine($array2);  //  ["k1"=>"val","k2"=>"val2","k3"=>"val3","k4"=>"val4"]
 
 
+    $array = ["k1"=>"val","k2"=>"val2"];
+    $array->count();  //  2
+
 ```
 
 
