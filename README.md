@@ -153,6 +153,9 @@ Syntax available is as follows.
     $n->floor();  // 12
 
     $n = 12.5;
+    $n->ceil();  // 13
+
+    $n = 12.5;
     $n->toInt();  // 12
 
     $n = 10;
