@@ -3,16 +3,19 @@ namespace Spl\Scalars;
 
 class Arrays {
 
-  public function chunk() {
-
+  public function chunk($size) {
+    $this->verifyInteger($size, "chunk()");
+    return array_chunk($this, $size);
   }
 
-  public function column() {
-    return array_column($this);
+  public function column($key) {
+    $this->verifyString($key, "column()");
+    return array_column($this, $key);
   }
 
-  public function combine($array_vals) {
-    return array_combine($this,$array_vals);
+  public function combine($arrayVals) {
+    $this->verifyArray($arrayVals, "combine()");
+    return array_combine($this,$arrayVals);
   }
 
   public function count() {
@@ -24,14 +27,26 @@ class Arrays {
   }
 
   public function diff($array) {
+    $this->verifyArray($array, "diff()");
     return array_diff($this, $array);
+  }
+
+  public function hasKey($key) {
+    $this->verifyString($key, "hasKey()");
+    return array_key_exists($key, $this);
   }
 
   public function keys() {
     return array_keys($this);
   }
 
+  public function keySort() {
+    ksort($this);
+    return $this;
+  }
+
   public function merge($array) {
+    $this->verifyArray($array, "merge()");
     return array_merge($this, $array);
   }
 
@@ -43,29 +58,15 @@ class Arrays {
     return array_rand($this);
   }
 
-  public function values() {
-    return array_values($this);
-  }
-
-  public function hasKey($key) {
-    return array_key_exists($key, $this);
+  public function reverseKeySort() {
+    krsort($this);
+    return $this;
   }
 
   public function sort() {
     sort($this);
     return $this;
   }
-
-  public function keySort() {
-    ksort($this);
-    return $this;
-  }
-
-  public function reverseKeySort() {
-    krsort($this);
-    return $this;
-  }
-
 
   public function toArray() {
     return $this;
@@ -86,6 +87,31 @@ class Arrays {
 
   public function toString() {
     return string($this);
+  }
+
+  public function values() {
+    return array_values($this);
+  }
+
+
+
+
+  protected function verifyInteger($input = null, $methodName = "") {
+    if (false === is_int($input)) {
+      throw new \InvalidArgumentException("Argument passed to $methodName has to be an integer");
+    }
+  }
+
+  protected function verifyString($input = null, $methodName = "") {
+    if (false === is_string($input)) {
+      throw new \InvalidArgumentException("Argument passed to $methodName has to be a string");
+    }
+  }
+
+  protected function verifyArray($input = null, $methodName = "") {
+    if (false === is_array($input)) {
+      throw new \InvalidArgumentException("Argument passed to $methodName has to be a array");
+    }
   }
 
 }

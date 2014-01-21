@@ -20,6 +20,7 @@ function showCommand($title, $input, $command, $output) {
   echo $input.PHP_EOL;
   echo $command.PHP_EOL;
   echo PHP_EOL;
+  if(is_array($output)) $output = print_r($output, 1);
   echo "----- Outputs -----".PHP_EOL.$output.PHP_EOL;
   echo PHP_EOL;
 }
