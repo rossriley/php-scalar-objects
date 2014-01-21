@@ -31,8 +31,8 @@ Syntax available is as follows.
     $array = [["key1"=>"value","key2"=>"value2"],["key1"=>"value","key2"=>"value2"]];
     $array->column("key2");   //  ["value2","value2"]
 
-    $array = ["k1"=>"val","k2"=>"val2"];
-    $array2 = ["k3"=>"val3","k4"=>"val4"];
+    $array = ["k1",k2","k3","k4"];
+    $array2 = ["val","val2","val3","val4"];
     $array->combine($array2);  //  ["k1"=>"val","k2"=>"val2","k3"=>"val3","k4"=>"val4"]
 
 

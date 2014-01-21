@@ -43,7 +43,7 @@ class Number {
       return is_int($this);
     }
 
-    public function modulo($num) {
+    public function mod($num) {
         return floor($this - $num *($this / $num));
     }
 
