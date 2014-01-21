@@ -7,4 +7,8 @@ class Nulls {
     return [];
   }
 
+  public function toJSON() {
+    return json_encode([]);
+  }
+
 }
