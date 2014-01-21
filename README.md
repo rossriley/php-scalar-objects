@@ -155,6 +155,12 @@ Syntax available is as follows.
     $n = 12.5;
     $n->toInt();  // 12
 
+    $n = 10;
+    $n->minus(5); // 5
+
+    $n = 20;
+    $n->divide(5); //4
+
 ```
 ###  Integers
 
