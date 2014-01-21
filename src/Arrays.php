@@ -60,6 +60,10 @@ class Arrays {
     return $this[$r];
   }
 
+  public function reverse() {
+    return array_reverse($this);
+  }
+
   public function reverseKeySort() {
     krsort($this);
     return $this;

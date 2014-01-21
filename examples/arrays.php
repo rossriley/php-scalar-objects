@@ -24,3 +24,6 @@ showCommand("push",'$array', '$array->push("val3")', $array->push("val3"));
 
 $array = ["k1"=>"val","k2"=>"val2","k3"=>"val3"];
 showCommand("rand",'', '$array->rand()', $array->rand());
+
+$array = ["k1"=>"val","k2"=>"val2","k3"=>"val3"];
+showCommand("reverse",'', '$array->reverse()', $array->reverse());

@@ -59,6 +59,9 @@ Syntax available is as follows.
     $array = ["k1"=>"val","k2"=>"val2","k3"=>"val3"];
     $array->rand();  //  "val3"
 
+    $array = ["k1"=>"val","k2"=>"val2","k3"=>"val3"];
+    $array->reverse();  //  ["k3"=>"va3","k2"=>"val2","k1"=>"val"]
+
 ```
 
 
