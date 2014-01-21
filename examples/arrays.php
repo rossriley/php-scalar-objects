@@ -27,3 +27,6 @@ showCommand("rand",'', '$array->rand()', $array->rand());
 
 $array = ["k1"=>"val","k2"=>"val2","k3"=>"val3"];
 showCommand("reverse",'', '$array->reverse()', $array->reverse());
+
+$array = ["k1"=>"val","k2"=>"val2","k3"=>"val3"];
+showCommand("toJSON",'', '$array->toJSON()', $array->toJSON());

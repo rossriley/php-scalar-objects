@@ -62,20 +62,77 @@ Syntax available is as follows.
     $array = ["k1"=>"val","k2"=>"val2","k3"=>"val3"];
     $array->reverse();  //  ["k3"=>"va3","k2"=>"val2","k1"=>"val"]
 
+    $array = ["k1"=>"val","k2"=>"val2","k3"=>"val3"];
+    $array->toJSON();  //  {"k1":"val","k2":"val2","k3":"val3"}
+
+```
+
+### Strings
+
+Syntax available is as follows.
+
+```php
+
+    $str = "Hello World";
+    $str->length();  //  11
+
+    $str->slice(0,4);  // Hell
+
+    $str->contains("Hell");  // true
+
+    $str->startsWith("Help");  // false
+
+    $str->endsWith("rld");   // true
+
+    $str->split(" ");  // ["Hello", "World"]
+
+    $str->repeat(3);   // "Hello WorldHello WorldHello World"
+
+    $str->reverse();   //  "dlroW olleH";
+
+    $str->toArray();   // [0=>"Hello World"]
+
+    $str->lower();   // "hello world"
+
+    $str->upper();   // "HELLO WORLD"
+
 ```
 
 
-### Floats
+### Floats / Integers
 
+```php
 
+    $n = 12;
+    $n->add(4);  // 16
 
-### Integers
+    $n = 12.5;
+    $n->add(4.2);  // 16.7
+
+    $n = -25;
+    $n->abs();  // 25
+
+    $n = 12.5;
+    $n->ceil();  // 13
+
+    $n = 12.5;
+    $n->floor();  // 12
+
+    $n = 12.5;
+    $n->toInt();  // 12
+
+```
 
 
 
 ### Nulls
 
+Syntax available is as follows.
 
-### Strings
+```php
 
+    $a = null;
+    $a->toJSON();  // []
+
+```
 

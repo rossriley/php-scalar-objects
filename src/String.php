@@ -155,7 +155,7 @@ class String {
       return json_encode($this);
     }
 
-    public function toLower() {
+    public function lower() {
         return strtolower($this);
     }
 
@@ -163,7 +163,7 @@ class String {
       return $this;
     }
 
-    public function toUpper() {
+    public function upper() {
         return strtoupper($this);
     }
 

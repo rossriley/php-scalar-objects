@@ -53,7 +53,7 @@ class Number {
     }
 
     public function toInt() {
-      return int($this);
+      return intval($this);
     }
 
     public function toJSON() {
