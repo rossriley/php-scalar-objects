@@ -8,7 +8,8 @@ class Number {
     }
 
     public function add($int) {
-        return $this + $int;
+      $this->verifyNumeric($int, "add()");
+      return $this + $int;
     }
 
     public function ceil() {
@@ -16,10 +17,12 @@ class Number {
     }
 
     public function divide($number) {
+      $this->verifyNumeric($number, "divide()");
       return $this / $number;
     }
 
     public function equals($number) {
+
       return $this === $number;
     }
 
@@ -44,6 +47,11 @@ class Number {
         return floor($this - $num *($this / $num));
     }
 
+    public function sub($num) {
+      $this->verifyNumeric($num, "sub()");
+      return $this - $num;
+    }
+
     public function toArray() {
       return [$this];
     }
@@ -64,5 +72,13 @@ class Number {
     public function toString() {
       return string($this);
     }
+
+    protected function verifyNumeric($input = null, $methodName = "") {
+    if (false === is_numeric($input)) {
+      throw new \InvalidArgumentException("Argument passed to $methodName has to be numeric");
+    }
+  }
+
+
 
 }

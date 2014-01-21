@@ -122,7 +122,15 @@ Syntax available is as follows.
     $n->toInt();  // 12
 
 ```
+###  Integers
 
+```php
+
+    $n = 10;
+    $n->even();  // true
+    $n->odd();   // false
+
+```
 
 
 ### Nulls
