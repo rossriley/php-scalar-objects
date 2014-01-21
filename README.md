@@ -24,11 +24,18 @@ The handlers are PSR-4 loaded under the namespace Spl\Scalars in the `src` direc
 Syntax available is as follows.
 
 ```php
+
     $array = ["first", "second", "third", "fourth", "fifth"];
-    echo $array->chunk(2)    //  [["first","second"],["third","fourth"],["fifth"]]
+    $array->chunk(2);   //  [["first","second"],["third","fourth"],["fifth"]]
 
     $array = [["key1"=>"value","key2"=>"value2"],["key1"=>"value","key2"=>"value2"]];
-    echo $array->column("key2")    //  ["value2","value2"]
+    $array->column("key2");   //  ["value2","value2"]
+
+    $array = ["key1"=>"value","key2"=>"value2"];
+    $array2 = ["key3"=>"value3","key4"=>"value4"];
+    $array->combine($array2);  //  ["key1"=>"value","key2"=>"value2","key3"=>"value3","key4"=>"value4"]
+
+
 ```
 
 
