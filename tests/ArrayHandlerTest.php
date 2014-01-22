@@ -1,7 +1,6 @@
 <?php
 namespace Spl\Scalars\Tests;
 
-
 class ArrayHandlerTest extends \PHPUnit_Framework_TestCase {
 
   public $simpleArray = ["first","second","third","fourth","fifth"];
@@ -59,6 +58,9 @@ class ArrayHandlerTest extends \PHPUnit_Framework_TestCase {
   public function test_max() {
     $arr = [2,4,6,8,10];
     $this->assertEquals($arr->max(), 10);
+
+    $arr = [2,4, 11, 6,8,10];
+    $this->assertEquals($arr->max(), 11);
   }
 
   public function test_merge_chain() {
@@ -68,8 +70,11 @@ class ArrayHandlerTest extends \PHPUnit_Framework_TestCase {
   }
 
   public function test_min() {
-    $arr = [2,4,6,8,10];
+    $arr = [2, 4, 6, 8, 10];
     $this->assertEquals($arr->min(), 2);
+
+    $arr = [2, 4, 6, -2, 8, 10];
+    $this->assertEquals($arr->min(), -2);
   }
 
   public function test_reindex() {
@@ -117,17 +122,65 @@ class ArrayHandlerTest extends \PHPUnit_Framework_TestCase {
   public function test_sum() {
     $arr = [2,4,6,8,10];
     $this->assertEquals($arr->sum(), 30);
+
+    $arr = [-2,4,6,8,10];
+    $this->assertEquals($arr->sum(), 28);
   }
 
-  // public function test_any() {
-  //   $arr = [2,4,6,8,10];
-  //   $this->assertEquals($arr->any(), );
-  // }
+  public function test_any() {
+    $arr = [true, false];
+    $this->assertEquals($arr->any(), true);
 
-  // public function test_all() {
-  //   $arr = [2,4,6,8,10];
-  //   $this->assertEquals($arr->all(), );
-  // }
+    $arr = [false, false];
+    $this->assertEquals($arr->any(), false);
+
+    $arr = [false, true, false];
+    $this->assertEquals($arr->any(), true);
+
+    $arr = [1, 0, false];
+    $this->assertEquals($arr->any(), true);
+
+    $arr = [false, 0, '', []];
+    $this->assertEquals($arr->any(), false);
+
+    $arr = [false, 0, '', [1]];
+    $this->assertEquals($arr->any(), true);
+  }
+
+  public function test_all() {
+    $arr = [2,4,6,8,10];
+    $this->assertEquals($arr->all(), true);
+
+    $arr = [true];
+    $this->assertEquals($arr->all(), true);
+
+    $arr = [1];
+    $this->assertEquals($arr->all(), true);
+
+    $arr = ['asdf'];
+    $this->assertEquals($arr->all(), true);
+
+    $arr = [[1]];
+    $this->assertEquals($arr->all(), true);
+
+    $arr = [true, 1, 'asdf', [1]];
+    $this->assertEquals($arr->all(), true);
+
+    $arr = [false, 1, 'asdf', [1]];
+    $this->assertEquals($arr->all(), false);
+
+    $arr = [true, 0, 'asdf', [1]];
+    $this->assertEquals($arr->all(), false);
+
+    $arr = [true, 1, '', [1]];
+    $this->assertEquals($arr->all(), false);
+
+    $arr = [true, 1, 'asdf', []];
+    $this->assertEquals($arr->all(), false);
+
+    $arr = [false, 0, '', []];
+    $this->assertEquals($arr->all(), false);
+  }
 
   public function test_intersect() {
     $arr1 = ['a' => 'green', 'red', 'blue'];
@@ -137,14 +190,19 @@ class ArrayHandlerTest extends \PHPUnit_Framework_TestCase {
 
   public function test_reduce() {
 
-    $rsum = function($v, $w) {
-        $v += $w;
-        return $v;
+    $rsum = function($accumulator, $w) {
+        $accumulator += $w;
+        return $accumulator;
     };
 
-    $rmul =function($v, $w) {
-        $v *= $w;
-        return $v;
+    $rmul = function($accumulator, $w) {
+        $accumulator *= $w;
+        return $accumulator;
+    };
+
+    $mappish_cube = function ($accumulator, $w) {
+        $accumulator[] = $w * $w;
+        return $accumulator;
     };
 
     $arr_num = [1,2,3,4,5];
@@ -152,13 +210,9 @@ class ArrayHandlerTest extends \PHPUnit_Framework_TestCase {
 
     $this->assertEquals($arr_num->reduce($rsum), 15);
     $this->assertEquals($arr_num->reduce($rmul, 10), 1200);
+    $this->assertEquals($arr_num->reduce($mappish_cube, []), [1, 4, 9, 16, 25]);
     $this->assertEquals($arr_emp->reduce($rsum, 'No data to reduce'), 'No data to reduce');
   }
-
-  // public function test_fold() {
-  //   $arr = [2,4,6,8,10];
-  //   $this->assertEquals($arr->fold(), );
-  // }
 
   public function test_map() {
     // Test #1
@@ -255,15 +309,9 @@ class ArrayHandlerTest extends \PHPUnit_Framework_TestCase {
     $this->assertEquals($arr2->filter($even), [0=>6, 2=>8, 4=>10, 6=>12]);
   }
 
-  // public function test_intersperse() {
-  //   $arr = [2,4,6,8,10];
-  //   $this->assertEquals($arr->intersperse(), );
-  // }
-
-  // public function test_union() {
-  //   $arr = [2,4,6,8,10];
-  //   $this->assertEquals($arr->union(), );
-  // }
+  public function test_intersperse() {
+    $this->assertEquals($this->SimpleArray->intersperse('foo'), ["first", "foo", "second", "foo", "third", "foo", "fourth", "foo", "fifth"]);
+  }
 
   public function test_difference() {
     $arr1 = ['a'=>'green','red','blue','red'];
