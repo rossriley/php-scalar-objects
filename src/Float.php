@@ -7,4 +7,8 @@ class Float extends Number {
         return intval($this);
     }
 
+    public function round($precision = 0, $mode = null) {
+        return round($this, $precision, $mode);
+    }
+
 }
