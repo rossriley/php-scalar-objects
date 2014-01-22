@@ -34,4 +34,12 @@ class ArrayHandlerTest extends \PHPUnit_Framework_TestCase {
     $this->assertEquals($arr1->merge($arr2)->count(), 4);
   }
 
+  public function test_has() {
+    $arr = $this->simpleArray;
+    $this->assertEquals($arr->has("second"), true);
+    $this->assertEquals($arr->has("tenth"), false);
+
+  }
+
+
 }

@@ -31,6 +31,10 @@ class Arrays {
     return array_diff($this, $array);
   }
 
+  public function has($value){
+    return in_array($value, $this);
+  }
+
   public function hasKey($key) {
     $this->verifyString($key, "hasKey()");
     return array_key_exists($key, $this);
