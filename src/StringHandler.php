@@ -1,7 +1,7 @@
 <?php
 namespace Spl\Scalars;
 
-class StringHandler
+class StringHandler implements ArrayLike
 {
 
     public function length()
