@@ -3,6 +3,25 @@ namespace Spl\Scalars;
 
 class ArrayHandler
 {
+    public function any()
+    {
+        $any = false;
+        foreach($this as $val) {
+            if($val) $any = true;
+        }
+        return $any;
+
+    }
+
+    public function all()
+    {
+        $all = true;
+        foreach($this as $val) {
+            if(!$val) $all = false;
+        }
+        return $all;
+
+    }
 
     public function chunk($size)
     {
@@ -76,6 +95,20 @@ class ArrayHandler
     {
         $this->verifyArray($array, "intersect");
         return array_intersect($this, $array);
+    }
+
+    public function intersperse($value)
+    {
+        $array = $this;
+        $chunk = array_chunk($array, 1);
+
+        $intersperser = function(&$row) {$row[1]="lalal";};
+        foreach($chunk as &$row) {
+            $row[1] = $value;
+        }
+        $result = call_user_func_array('array_merge', $chunk);
+        array_pop($result);
+        return $result;
     }
 
     public function join($on="")

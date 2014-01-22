@@ -124,7 +124,7 @@ class ArrayHandlerTest extends \PHPUnit_Framework_TestCase {
     $this->assertEquals($arr->sum(), 30);
 
     $arr = [-2,4,6,8,10];
-    $this->assertEquals($arr->sum(), 28);
+    $this->assertEquals($arr->sum(), 26);
   }
 
   public function test_any() {
@@ -310,7 +310,7 @@ class ArrayHandlerTest extends \PHPUnit_Framework_TestCase {
   }
 
   public function test_intersperse() {
-    $this->assertEquals($this->SimpleArray->intersperse('foo'), ["first", "foo", "second", "foo", "third", "foo", "fourth", "foo", "fifth"]);
+    $this->assertEquals($this->simpleArray->intersperse('foo'), ["first", "foo", "second", "foo", "third", "foo", "fourth", "foo", "fifth"]);
   }
 
   public function test_difference() {
