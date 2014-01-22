@@ -101,6 +101,13 @@ Syntax available is as follows.
     $array = ["k1"=>"val","k2"=>"val2","k3"=>"val3"];
     $array->reverse();  //  ["k3"=>"va3","k2"=>"val2","k1"=>"val"]
 
+    $arr = [
+      ["id"=>5, "val"=>"first"],["id"=>6, "val"=>"second"],["id"=>7, "val"=>"third"]
+    ];
+    $array->reindex();  //  [0=>["id"=>5, "val"=>"first"],1=>["id"=>6, "val"=>"second"],2=>["id"=>7, "val"=>"third"]]
+    $array->reindex(function($row){return $row["id"]});  //  [5=>["id"=>5, "val"=>"first"],6=>["id"=>6, "val"=>"second"],7=>["id"=>7, "val"=>"third"]]
+
+
     $array = ["k1"=>"val","k2"=>"val2","k3"=>"val3"];
     $array->toJSON();  //  {"k1":"val","k2":"val2","k3":"val3"}
 
