@@ -85,6 +85,14 @@ class Arrays {
     return $this[$r];
   }
 
+  public function reindex($by = null) {
+    if(null === $by) return array_values($this);
+    if(is_callable($by)) {
+      $keys = array_map($by, $this);
+      return array_combine($keys, array_values($this));
+    }
+  }
+
   public function reverse() {
     return array_reverse($this);
   }

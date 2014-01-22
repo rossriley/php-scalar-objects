@@ -72,5 +72,47 @@ class ArrayHandlerTest extends \PHPUnit_Framework_TestCase {
     $this->assertEquals($arr->min(), 2);
   }
 
+  public function test_reindex() {
+    $arr = [
+      ["id"=>5, "val"=>"first"],
+      ["id"=>6, "val"=>"second"],
+      ["id"=>7, "val"=>"third"]
+    ];
+
+    $expected = [
+      0=>["id"=>5, "val"=>"first"],
+      1=>["id"=>6, "val"=>"second"],
+      2=>["id"=>7, "val"=>"third"]
+    ];
+
+    $this->assertEquals($arr->reindex(), $expected );
+
+    $expected = [
+      5=>["id"=>5, "val"=>"first"],
+      6=>["id"=>6, "val"=>"second"],
+      7=>["id"=>7, "val"=>"third"]
+    ];
+
+    $this->assertEquals($arr->reindex(function($row){return $row["id"];}), $expected);
+
+  }
+
+  public function test_reindex_object() {
+    $arr = [
+      (object)["id"=>5, "val"=>"first"],
+      (object)["id"=>6, "val"=>"second"],
+      (object)["id"=>7, "val"=>"third"]
+    ];
+
+    $expected = [
+      5=>(object)["id"=>5, "val"=>"first"],
+      6=>(object)["id"=>6, "val"=>"second"],
+      7=>(object)["id"=>7, "val"=>"third"]
+    ];
+
+    $this->assertEquals($arr->reindex(function($row){return $row->id;}), $expected);
+
+  }
+
 
 }
