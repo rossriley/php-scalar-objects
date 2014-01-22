@@ -32,7 +32,7 @@ class Arrays {
   }
 
   public function has($value){
-    return in_array($value, $this);
+    return in_array($value, $this, true);
   }
 
   public function hasKey($key) {
