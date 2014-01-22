@@ -55,7 +55,7 @@ class NumberHandler
 
     public function toFloat()
     {
-        return float($this);
+        return (float)$this;
     }
 
     public function toInt()
@@ -71,7 +71,7 @@ class NumberHandler
 
     public function toString()
     {
-        return string($this);
+        return (string)$this;
     }
 
     protected function verifyNumeric($input = null, $methodName = "")

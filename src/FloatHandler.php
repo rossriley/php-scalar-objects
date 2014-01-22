@@ -14,4 +14,19 @@ class FloatHandler extends NumberHandler
         return round($this, $precision, $mode);
     }
 
+    //Stub
+    public function toPrecision ($int = null) {
+        if (!$int === null) {
+            return $this->toString();
+        }
+        return $this->toString();
+    }
+
+    public function toFixed ($int = null) {
+        if ($int === null) {
+            return $this->toString();
+        }
+        return round($this, $int)->toString();
+    }
+
 }
