@@ -159,12 +159,13 @@ $str->slice(0,4);  // Hell
 ```php
 $str = "Hello World";
 $str->contains("Hell");  // true
+```
 
 #### startsWith()
 ```php
 $str = "Hello World";
 $str->startsWith("Help");  // false
-
+```
 
 #### endsWith()
 ```php
