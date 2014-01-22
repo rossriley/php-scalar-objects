@@ -123,10 +123,16 @@ class Arrays
         return $this;
     }
 
-    public function sort()
+    public function sort($flags = null)
     {
-        sort($this);
-        return $this;
+        $array = clone $this;
+        $result = sort($array, $flags);
+
+        if ($result === false) {
+            throw new \InvalidArgumentException("Array object could not be sorted");
+        }
+
+        return $array;
     }
 
     public function toArray()
