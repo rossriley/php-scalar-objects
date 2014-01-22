@@ -6,19 +6,19 @@ class Arrays
 
     public function chunk($size)
     {
-        $this->verifyInteger($size, "chunk()");
+        $this->verifyInteger($size, "chunk");
         return array_chunk($this, $size);
     }
 
     public function column($key)
     {
-        $this->verifyString($key, "column()");
+        $this->verifyString($key, "column");
         return array_column($this, $key);
     }
 
     public function combine($arrayVals)
     {
-        $this->verifyArray($arrayVals, "combine()");
+        $this->verifyArray($arrayVals, "combine");
         return array_combine($this,$arrayVals);
     }
 
@@ -33,7 +33,7 @@ class Arrays
 
     public function diff($array)
     {
-        $this->verifyArray($array, "diff()");
+        $this->verifyArray($array, "diff");
         return array_diff($this, $array);
     }
 
@@ -50,7 +50,7 @@ class Arrays
 
     public function hasKey($key)
     {
-        $this->verifyString($key, "hasKey()");
+        $this->verifyString($key, "hasKey");
         return array_key_exists($key, $this);
     }
 
@@ -82,7 +82,7 @@ class Arrays
 
     public function merge($array)
     {
-        $this->verifyArray($array, "merge()");
+        $this->verifyArray($array, "merge");
         return array_merge($this, $array);
     }
 
