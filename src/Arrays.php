@@ -53,6 +53,10 @@ class Arrays {
     return $this;
   }
 
+  public function max() {
+    return max($this);
+  }
+
   public function merge($array) {
     $this->verifyArray($array, "merge()");
     return array_merge($this, $array);

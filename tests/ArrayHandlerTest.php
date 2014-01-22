@@ -49,5 +49,10 @@ class ArrayHandlerTest extends \PHPUnit_Framework_TestCase {
     $this->assertEquals($keyarray->indexOf(2), "b");
   }
 
+  public function test_max() {
+    $arr = [2,4,6,8,10];
+    $this->assertEquals($arr->max(), 10);
+  }
+
 
 }
