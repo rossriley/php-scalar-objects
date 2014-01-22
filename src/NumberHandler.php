@@ -9,22 +9,12 @@ class NumberHandler
         return abs($this);
     }
 
-    public function add($int)
-    {
-        $this->verifyNumeric($int, "add()");
-        return $this + $int;
-    }
 
     public function ceil()
     {
         return ceil($this);
     }
 
-    public function divide($number)
-    {
-        $this->verifyNumeric($number, "divide()");
-        return $this / $number;
-    }
 
     public function equals($number)
     {
@@ -57,11 +47,6 @@ class NumberHandler
         return floor($this - $num *($this / $num));
     }
 
-    public function minus($num)
-    {
-        $this->verifyNumeric($num, "minus()");
-        return $this - $num;
-    }
 
     public function toArray()
     {

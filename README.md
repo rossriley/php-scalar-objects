@@ -172,40 +172,43 @@ $str->upper();   // "HELLO WORLD"
 
 ### Floats / Integers
 
+#### abs()
 ```php
-$n = 12;
-$n->add(4);  // 16
-
-$n = 12.5;
-$n->add(4.2);  // 16.7
-
 $n = -25;
 $n->abs();  // 25
+```
 
+#### ceil()
+```php
 $n = 12.5;
 $n->ceil();  // 13
+```
 
+#### floor()
+```php
 $n = 12.5;
 $n->floor();  // 12
+```
 
-$n = 12.5;
-$n->ceil();  // 13
-
+#### toInt()
+```php
 $n = 12.5;
 $n->toInt();  // 12
-
-$n = 10;
-$n->minus(5); // 5
-
-$n = 20;
-$n->divide(5); //4
 ```
+
 
 ###  Integers
 
+
+#### even()
 ```php
 $n = 10;
 $n->even();  // true
+```
+
+#### odd()
+```php
+$n = 10;
 $n->odd();   // false
 ```
 
