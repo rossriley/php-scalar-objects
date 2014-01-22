@@ -154,6 +154,7 @@ $str->length();  //  11
 ```php
 $str = "Hello World";
 $str->slice(0,4);  // Hell
+```
 
 #### contains()
 ```php
