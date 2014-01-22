@@ -41,5 +41,12 @@ class ArrayHandlerTest extends \PHPUnit_Framework_TestCase {
 
   }
 
+  public function test_indexOf() {
+    $arr = $this->simpleArray;
+    $this->assertEquals($arr->indexOf("second"), 1);
+    $this->assertEquals($arr->indexOf("tenth"), false);
+
+  }
+
 
 }

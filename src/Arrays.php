@@ -40,6 +40,10 @@ class Arrays {
     return array_key_exists($key, $this);
   }
 
+  public function indexOf($value){
+    return array_search($value, $this);
+  }
+
   public function keys() {
     return array_keys($this);
   }
