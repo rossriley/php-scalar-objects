@@ -44,6 +44,10 @@ class Arrays {
     return array_search($value, $this);
   }
 
+  public function join($on="") {
+    return implode($on, $this);
+  }
+
   public function keys() {
     return array_keys($this);
   }
