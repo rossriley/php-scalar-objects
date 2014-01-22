@@ -54,5 +54,10 @@ class ArrayHandlerTest extends \PHPUnit_Framework_TestCase {
     $this->assertEquals($arr->max(), 10);
   }
 
+  public function test_min() {
+    $arr = [2,4,6,8,10];
+    $this->assertEquals($arr->min(), 2);
+  }
+
 
 }

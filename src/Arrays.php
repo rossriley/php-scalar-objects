@@ -62,6 +62,10 @@ class Arrays {
     return array_merge($this, $array);
   }
 
+  public function min() {
+    return min($this);
+  }
+
   public function push($val) {
     array_push($this, $val);
     return $this;
