@@ -144,29 +144,74 @@ $array->toJSON();  //  {"k1":"val","k2":"val2","k3":"val3"}
 
 Syntax available is as follows.
 
+#### length()
 ```php
 $str = "Hello World";
 $str->length();  //  11
+```
 
+#### slice()
+```php
+$str = "Hello World";
 $str->slice(0,4);  // Hell
 
+#### contains()
+```php
+$str = "Hello World";
 $str->contains("Hell");  // true
 
+#### startsWith()
+```php
+$str = "Hello World";
 $str->startsWith("Help");  // false
 
+
+#### endsWith()
+```php
+$str = "Hello World";
 $str->endsWith("rld");   // true
+```
 
+
+#### split()
+```php
+$str = "Hello World";
 $str->split(" ");  // ["Hello", "World"]
+```
 
+
+#### repeat()
+```php
+$str = "Hello World";
 $str->repeat(3);   // "Hello WorldHello WorldHello World"
+```
 
+
+#### reverse()
+```php
+$str = "Hello World";
 $str->reverse();   //  "dlroW olleH";
+```
 
-$str->toArray();   // [0=>"Hello World"]
 
+#### lower()
+```php
+$str = "Hello World";
 $str->lower();   // "hello world"
+```
 
+
+#### upper()
+```php
+$str = "Hello World";
 $str->upper();   // "HELLO WORLD"
+```
+
+
+#### toArray()
+```php
+$str = "Hello World";
+$str->toArray();   // [0=>"Hello World"]
 ```
 
 
