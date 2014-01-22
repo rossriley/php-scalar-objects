@@ -4,8 +4,8 @@ PHP Scalar Object Handlers
 ## Wouldn't you prefer to write PHP like this?
 
 ```php
-$n = 12;
-echo $n->add(5)->minus(2)->divide(3); // 5
+$n = 12.5;
+echo $n->floor()->toString()->length(); // 2
 ```
 
 Or deal with strings, without remembering the parameter order?
