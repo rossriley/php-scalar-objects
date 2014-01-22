@@ -1,17 +1,17 @@
 <?php
 include __DIR__."/../vendor/autoload.php";
 // Hack to autoload the classes
-$init = new Spl\Scalars\String;
-$init = new Spl\Scalars\Integer;
-$init = new Spl\Scalars\Float;
-$init = new Spl\Scalars\Arrays;
-$init = new Spl\Scalars\Nulls;
+$init = new Spl\Scalars\StringHandler;
+$init = new Spl\Scalars\IntegerHandler;
+$init = new Spl\Scalars\FloatHandler;
+$init = new Spl\Scalars\ArrayHandler;
+$init = new Spl\Scalars\NullHandler;
 
-register_primitive_type_handler('string', 'Spl\\Scalars\\String');
-register_primitive_type_handler('int',    'Spl\\Scalars\\Integer');
-register_primitive_type_handler('float',  'Spl\\Scalars\\Float');
-register_primitive_type_handler('array',  'Spl\\Scalars\\Arrays');
-register_primitive_type_handler('null',   'Spl\\Scalars\\Nulls');
+register_primitive_type_handler('string', 'Spl\\Scalars\\StringHandler');
+register_primitive_type_handler('int',    'Spl\\Scalars\\IntegerHandler');
+register_primitive_type_handler('float',  'Spl\\Scalars\\FloatHandler');
+register_primitive_type_handler('array',  'Spl\\Scalars\\ArrayHandler');
+register_primitive_type_handler('null',   'Spl\\Scalars\\NullHandler');
 
 
 function showCommand($title, $input, $command, $output) {
