@@ -45,7 +45,8 @@ class ArrayHandlerTest extends \PHPUnit_Framework_TestCase {
     $arr = $this->simpleArray;
     $this->assertEquals($arr->indexOf("second"), 1);
     $this->assertEquals($arr->indexOf("tenth"), false);
-
+    $keyarray = ['a' => 1, 'b' => 2, 'c' => 3];
+    $this->assertEquals($keyarray->indexOf(2), "b");
   }
 
 
