@@ -27,7 +27,7 @@ print_r($arr->merge(["k3"=>"val3","k4"=>"val4"])->count()) // 4
 $array = [1,2,3,4,5];
 $array->each(function(&$value) {
   $value *= 2;
-});
+});  // [2,4,6,8,10]
 ```
 
 PHP6 Gives us a chance to create a new API to streamline the language in a way that ensures all old code still runs in the same way.
