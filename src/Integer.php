@@ -1,7 +1,8 @@
 <?php
 namespace Spl\Scalars;
 
-class Integer extends Number {
+class Integer extends Number
+{
 
     public function toInt()
     {
