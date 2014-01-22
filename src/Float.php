@@ -1,13 +1,16 @@
 <?php
 namespace Spl\Scalars;
 
-class Float extends Number {
+class Float extends Number
+{
 
-    public function toInt() {
+    public function toInt()
+    {
         return intval($this);
     }
 
-    public function round($precision = 0, $mode = null) {
+    public function round($precision = 0, $mode = null)
+    {
         return round($this, $precision, $mode);
     }
 

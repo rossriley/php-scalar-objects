@@ -1,83 +1,100 @@
 <?php
 namespace Spl\Scalars;
 
-class Number {
+class Number
+{
 
-    public function abs() {
-      return abs($this);
+    public function abs()
+    {
+        return abs($this);
     }
 
-    public function add($int) {
-      $this->verifyNumeric($int, "add()");
-      return $this + $int;
+    public function add($int)
+    {
+        $this->verifyNumeric($int, "add()");
+        return $this + $int;
     }
 
-    public function ceil() {
-      return ceil($this);
+    public function ceil()
+    {
+        return ceil($this);
     }
 
-    public function divide($number) {
-      $this->verifyNumeric($number, "divide()");
-      return $this / $number;
+    public function divide($number)
+    {
+        $this->verifyNumeric($number, "divide()");
+        return $this / $number;
     }
 
-    public function equals($number) {
-
-      return $this === $number;
+    public function equals($number)
+    {
+        return $this === $number;
     }
 
 
-    public function floor() {
-      return floor($this);
+    public function floor()
+    {
+        return floor($this);
     }
 
-    public function isBoolean() {
-      return is_bool($this);
+    public function isBoolean()
+    {
+        return is_bool($this);
     }
 
-    public function isFloat() {
-      return is_float($this);
+    public function isFloat()
+    {
+        return is_float($this);
     }
 
-    public function isInt() {
-      return is_int($this);
+    public function isInt()
+    {
+        return is_int($this);
     }
 
-    public function mod($num) {
+    public function mod($num)
+    {
         return floor($this - $num *($this / $num));
     }
 
-    public function minus($num) {
-      $this->verifyNumeric($num, "minus()");
-      return $this - $num;
+    public function minus($num)
+    {
+        $this->verifyNumeric($num, "minus()");
+        return $this - $num;
     }
 
-    public function toArray() {
-      return [$this];
+    public function toArray()
+    {
+        return [$this];
     }
 
-    public function toFloat() {
-      return float($this);
+    public function toFloat()
+    {
+        return float($this);
     }
 
-    public function toInt() {
-      return intval($this);
+    public function toInt()
+    {
+        return intval($this);
     }
 
-    public function toJSON() {
-      return json_encode($this);
+    public function toJSON()
+    {
+        return json_encode($this);
     }
 
 
-    public function toString() {
-      return string($this);
+    public function toString()
+    {
+        return string($this);
     }
 
-    protected function verifyNumeric($input = null, $methodName = "") {
-    if (false === is_numeric($input)) {
-      throw new \InvalidArgumentException("Argument passed to $methodName has to be numeric");
+    protected function verifyNumeric($input = null, $methodName = "")
+    {
+        if (false === is_numeric($input)) {
+            throw new \InvalidArgumentException("Argument passed to $methodName has to be numeric");
+        }
     }
-  }
 
 
 

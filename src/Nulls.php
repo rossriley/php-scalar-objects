@@ -1,14 +1,17 @@
 <?php
 namespace Spl\Scalars;
 
-class Nulls {
+class Nulls
+{
 
-  public function toArray(){
-    return [];
-  }
+    public function toArray()
+    {
+        return [];
+    }
 
-  public function toJSON() {
-    return json_encode([]);
-  }
+    public function toJSON()
+    {
+        return json_encode([]);
+    }
 
 }
