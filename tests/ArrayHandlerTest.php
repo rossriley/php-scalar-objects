@@ -28,11 +28,12 @@ class ArrayHandlerTest extends \PHPUnit_Framework_TestCase {
 
   }
 
-  public function test_merge_chain() {
-    $arr1 = ["k1"=>"val1","k2"=>"val2"];
-    $arr2 = ["k3"=>"val3","k4"=>"val4"];
-    $this->assertEquals($arr1->merge($arr2)->count(), 4);
+  public function test_each() {
+    $arr = [1,2,3,4,5,6,7,8,9,10];
+    $arr->each(function(&$value){ $value *=2;});
+    $this->assertEquals($arr, [2,4,6,8,10,12,14,16,18,20]);
   }
+
 
   public function test_has() {
     $arr = $this->simpleArray;
@@ -58,6 +59,12 @@ class ArrayHandlerTest extends \PHPUnit_Framework_TestCase {
   public function test_max() {
     $arr = [2,4,6,8,10];
     $this->assertEquals($arr->max(), 10);
+  }
+
+  public function test_merge_chain() {
+    $arr1 = ["k1"=>"val1","k2"=>"val2"];
+    $arr2 = ["k3"=>"val3","k4"=>"val4"];
+    $this->assertEquals($arr1->merge($arr2)->count(), 4);
   }
 
   public function test_min() {

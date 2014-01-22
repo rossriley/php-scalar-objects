@@ -31,6 +31,11 @@ class Arrays {
     return array_diff($this, $array);
   }
 
+  public function each($callback) {
+    array_walk_recursive($this, $callback);
+    return $this;
+  }
+
   public function has($value){
     return in_array($value, $this, true);
   }
@@ -137,6 +142,12 @@ class Arrays {
   protected function verifyArray($input = null, $methodName = "") {
     if (false === is_array($input)) {
       throw new \InvalidArgumentException("Argument passed to $methodName has to be a array");
+    }
+  }
+
+  protected function verifyCallable($input = null, $methodName = "") {
+    if (false === is_callable($input)) {
+      throw new \InvalidArgumentException("Argument passed to $methodName needs to be callable");
     }
   }
 
