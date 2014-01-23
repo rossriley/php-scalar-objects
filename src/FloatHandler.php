@@ -4,6 +4,10 @@ namespace Spl\Scalars;
 class FloatHandler extends NumberHandler
 {
 
+    public function isFloat() {
+        return true;
+    }
+
     public function toInt()
     {
         return intval($this);

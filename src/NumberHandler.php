@@ -1,7 +1,7 @@
 <?php
 namespace Spl\Scalars;
 
-class NumberHandler
+class NumberHandler extends ScalarObjectHandler
 {
 
     public function abs()

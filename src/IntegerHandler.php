@@ -4,6 +4,10 @@ namespace Spl\Scalars;
 class IntegerHandler extends NumberHandler
 {
 
+    public function isInt() {
+        return true;
+    }
+
     public function toInt()
     {
         return $this;

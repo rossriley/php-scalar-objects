@@ -1,8 +1,12 @@
 <?php
 namespace Spl\Scalars;
 
-class StringHandler
+class StringHandler extends ScalarObjectHandler
 {
+
+    public function isString() {
+        return true;
+    }
 
     public function length()
     {

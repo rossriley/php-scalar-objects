@@ -1,8 +1,13 @@
 <?php
 namespace Spl\Scalars;
 
-class ArrayHandler
+class ArrayHandler extends ScalarObjectHandler
 {
+
+    public function isArray() {
+        return true;
+    }
+
     public function any()
     {
         $any = false;
@@ -299,8 +304,5 @@ class ArrayHandler
         }
     }
 
-    public function __clone() {
-        print_r($this); exit;
-    }
 
 }

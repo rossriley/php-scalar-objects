@@ -1,8 +1,12 @@
 <?php
 namespace Spl\Scalars;
 
-class NullHandler
+class NullHandler extends ScalarObjectHandler
 {
+
+    public function isNull() {
+        return true;
+    }
 
     public function toArray()
     {
