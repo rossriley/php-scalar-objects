@@ -1,7 +1,7 @@
 <?php
 namespace Spl\Scalars;
 
-class ArrayHandler
+class ArrayHandler implements ArrayLike
 {
     public function any()
     {
