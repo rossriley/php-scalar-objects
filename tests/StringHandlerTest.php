@@ -37,6 +37,20 @@ class StringHandlerTest extends \PHPUnit_Framework_TestCase {
     $this->assertEquals($str->lower(), "hello world");
   }
 
+  public function testPadLeft()
+  {
+    $str = "Hello World";
+    $this->assertEquals($str->padLeft(12), " Hello World");
+    $this->assertEquals($str->padLeft(12, "-"), "-Hello World");
+  }
+
+  public function testPadRight()
+  {
+    $str = "Hello World";
+    $this->assertEquals($str->padRight(12), "Hello World ");
+    $this->assertEquals($str->padRight(12, "-"), "Hello World-");
+  }
+
   public function testRepeat() {
     $str = "testing";
     $this->assertEquals($str->repeat(3), "testingtestingtesting");
