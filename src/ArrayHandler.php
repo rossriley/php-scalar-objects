@@ -28,6 +28,12 @@ class ArrayHandler extends ScalarObjectHandler
 
     }
 
+    public function compact()
+    {
+        $array = $this;
+        return array_filter($array);
+    }
+
     public function chunk($size)
     {
         $this->verifyInteger($size, "chunk");

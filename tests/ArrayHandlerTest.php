@@ -9,15 +9,21 @@ class ArrayHandlerTest extends \PHPUnit_Framework_TestCase {
 
   }
 
-  public function test_chunk() {
+  public function testChunk()
+  {
     $arr = $this->simpleArray;
     $this->assertEquals($arr->chunk(2), [["first","second"],["third","fourth"],["fifth"]]);
-
   }
 
   public function test_column() {
     $arr = [["key1"=>"value","key2"=>"value2"],["key1"=>"value","key2"=>"value2"]];
     $this->assertEquals($arr->column("key2"), ["value2","value2"]);
+  }
+
+  public function testCompact()
+  {
+    $arr = [0=>"val", 1=>false, 2=>"val", 3=>null];
+    $this->assertEquals($arr->compact(), [0=>"val", 2=>"val"]);
   }
 
   public function test_combine() {
