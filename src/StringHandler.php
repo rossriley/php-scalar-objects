@@ -8,6 +8,15 @@ class StringHandler extends ScalarObjectHandler
         return true;
     }
 
+    public function caseCompare($compare)
+    {
+        return strcasecmp($this, $compare);
+    }
+
+    public function hash($algo = PASSWORD_DEFAULT, $options=[]) {
+        return password_hash($this, $algo, $options);
+    }
+
     public function length()
     {
         return strlen($this);
@@ -69,9 +78,19 @@ class StringHandler extends ScalarObjectHandler
         return strrpos($this, $string, $offset - $this->length());
     }
 
+    public function capitalize()
+    {
+        return ucwords($this);
+    }
+
     public function contains($string)
     {
         return false !== $this->indexOf($string);
+    }
+
+    public function lower()
+    {
+        return strtolower($this);
     }
 
     public function startsWith($string)
@@ -184,10 +203,6 @@ class StringHandler extends ScalarObjectHandler
       return json_encode($this);
     }
 
-    public function lower()
-    {
-        return strtolower($this);
-    }
 
     public function toString()
     {

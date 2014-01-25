@@ -47,6 +47,10 @@ class NumberHandler extends ScalarObjectHandler
         return floor($this - $num *($this / $num));
     }
 
+    public function sqrt() {
+        return sqrt($this);
+    }
+
 
     public function toArray()
     {
