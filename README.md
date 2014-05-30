@@ -266,5 +266,5 @@ Syntax available is as follows.
 
 ```php
 $a = null;
-$a->toJSON();  // []
+$a->toJSON();  // null
 ```
