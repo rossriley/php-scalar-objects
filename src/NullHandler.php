@@ -15,7 +15,7 @@ class NullHandler extends ScalarObjectHandler
 
     public function toJSON()
     {
-        return json_encode([]);
+        return 'null';
     }
 
 }
