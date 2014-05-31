@@ -10,4 +10,8 @@ class BooleanHandler extends ScalarObjectHandler
         return true;
     }
 
+    public function toJSON()
+    {
+        return json_encode($this);
+    }
 }
