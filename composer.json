@@ -1,5 +1,5 @@
 {
-    "name": "rossriley/phpscalars",
+    "name": "chris-kruining/phpscalars",
     "type": "library",
     "description": "PHP Handlers for experimental Scalar Object Handlers",
     "license": "MIT",
@@ -14,7 +14,8 @@
       "psr-4": {
         "Spl\\Scalars\\": "src",
         "Spl\\Scalars\\Tests\\": "tests"
-      }
+      },
+      "files": ["src/bootstrap.php"]
     }
 
 
